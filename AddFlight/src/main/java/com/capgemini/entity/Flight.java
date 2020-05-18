@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name="add_Flights")
+@Table(name="Flights_set")
 public class Flight implements Serializable {
 	
 	

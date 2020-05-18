@@ -13,12 +13,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 
 @Entity
-@Table(name="scheduling")
+@Table(name="scheduling_set")
 public class Schedule {
 	
 	@Id
@@ -29,10 +28,10 @@ public class Schedule {
 	@Column(length=10)
 	private String destinationAirport;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	//@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(length=10)
 	private LocalDateTime departureDate;
-	 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+//	 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	 @Column(length=10)
 	private LocalDateTime arrivalDate;
 	
@@ -77,7 +76,7 @@ public class Schedule {
 	public void setDepartureDate(LocalDateTime departureDate) {
 		this.departureDate = departureDate;
 	}
-	 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	 //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	public LocalDateTime getArrivalDate() {
 		return arrivalDate;
 	}

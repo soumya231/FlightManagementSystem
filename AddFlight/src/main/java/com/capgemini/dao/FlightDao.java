@@ -14,4 +14,6 @@ public interface FlightDao extends JpaRepository<Flight, Integer> {
 	@Query("Select d from Flight d where d.flights=?1")
 	public List<Flight> findAllFlights();
 	
+
+	
 }

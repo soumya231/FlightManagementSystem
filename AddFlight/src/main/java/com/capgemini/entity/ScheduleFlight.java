@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name="scheduled_flights")
+@Table(name="scheduled_set")
 public class ScheduleFlight implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -53,6 +53,18 @@ public class ScheduleFlight implements Serializable {
 	public void setFlight(Flight flight) {
 		this.flight = flight;
 	}
+
+
+	public Flight getFlight() {
+		return flight;
+	}
+
+
+
+	public Schedule getSchedule() {
+		return schedule;
+	}
+
 
 
 	public void setSchedule(Schedule schedule) {
