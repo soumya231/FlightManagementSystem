@@ -59,8 +59,8 @@ public class AddFlightApplicationTests {
 	 ScheduleFlight schedule=new ScheduleFlight();
 	 Schedule scheduling=new Schedule();
 	schedule.setFlightNumber(17771);
-		scheduling.setSourceAirport("Mysore");
-		scheduling.setDestinationAirport("Pune");
+		scheduling.setSource("Mysore");
+		scheduling.setDestination("Pune");
 		scheduling.setArrivalDate(localDateTime1);
 		scheduling.setDepartureDate(localDateTime2);
 		scheduling.setScheduleId(190);

@@ -18,7 +18,7 @@ import com.capgemini.service.FlightService;
 
 @RestController
 @RequestMapping("/flight")
-@CrossOrigin(origins="http://localhost:4200", maxAge=3600)
+@CrossOrigin(origins="http://localhost:4200")
 
 public class RestControllerApplication {
 
@@ -27,7 +27,7 @@ public class RestControllerApplication {
 
 	
 	
-	
+//adding the details of flights	
 	@PostMapping("/AddFlight")
 	public ResponseEntity<String> addFlight(@RequestBody Flight flight) {
 		Flight data=flightService.addFlight(flight);
@@ -42,6 +42,7 @@ public class RestControllerApplication {
 			
 	}
 	
+	//scheduling the flights 
 	@PutMapping("/update")
 	public ResponseEntity<String> updateFlight( @RequestBody ScheduleFlight schedule) {
 		

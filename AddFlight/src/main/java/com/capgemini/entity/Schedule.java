@@ -4,11 +4,9 @@ package com.capgemini.entity;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,9 +22,9 @@ public class Schedule {
 	@Column(length=10)
 	private int scheduleId;
 	@Column(length=10)
-	private String sourceAirport;
+	private String source;
 	@Column(length=10)
-	private String destinationAirport;
+	private String destination;
 	
 	//@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(length=10)
@@ -35,9 +33,6 @@ public class Schedule {
 	 @Column(length=10)
 	private LocalDateTime arrivalDate;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "airportId")
-	private Airport airport;
 	
 	@OneToOne( mappedBy = "schedule")
 	private ScheduleFlight scheduleFlight;
@@ -46,26 +41,23 @@ public class Schedule {
 		return scheduleId;
 	}
 	
-	public void setAirport(Airport airport) {
-		this.airport = airport;
-	}
 	public void setScheduleFlight(ScheduleFlight scheduleFlight) {
 		this.scheduleFlight = scheduleFlight;
 	}
 	public void setScheduleId(int scheduleId) {
 		this.scheduleId = scheduleId;
 	}
-	public String getSourceAirport() {
-		return sourceAirport;
+	public String getSource() {
+		return source;
 	}
-	public void setSourceAirport(String sourceAirport) {
-		this.sourceAirport = sourceAirport;
+	public void setSource(String source) {
+		this.source = source;
 	}
-	public String getDestinationAirport() {
-		return destinationAirport;
+	public String getDestination() {
+		return destination;
 	}
-	public void setDestinationAirport(String destinationAirport) {
-		this.destinationAirport = destinationAirport;
+	public void setDestination(String destination) {
+		this.destination = destination;
 	}
 	
 	 
@@ -76,7 +68,6 @@ public class Schedule {
 	public void setDepartureDate(LocalDateTime departureDate) {
 		this.departureDate = departureDate;
 	}
-	 //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	public LocalDateTime getArrivalDate() {
 		return arrivalDate;
 	}
@@ -85,12 +76,12 @@ public class Schedule {
 	}
 	
 
-	public Schedule(int scheduleId, String sourceAirport, String destinationAirport, LocalDateTime departureDate,
+	public Schedule(int scheduleId, String source, String destination, LocalDateTime departureDate,
 			LocalDateTime arrivalDate) {
 		super();
 		this.scheduleId = scheduleId;
-		this.sourceAirport = sourceAirport;
-		this.destinationAirport = destinationAirport;
+		this.source = source;
+		this.destination= destination;
 		this.departureDate = departureDate;
 		this.arrivalDate = arrivalDate;
 	}

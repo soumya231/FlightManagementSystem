@@ -20,7 +20,7 @@ public class FlightService implements FlightServiceI {
 	@Autowired
 	private ScheduleDao scheduledao;
 		
-
+   //adding the details of flight
 	@Override
 	public Flight addFlight(Flight data) {
          ScheduleFlight details=data.getScheduleFlight();
@@ -33,7 +33,7 @@ public class FlightService implements FlightServiceI {
 		 
 		
 	}
-	
+	//scheduling the flights
 	@Override
 	public ScheduleFlight updateFlight(ScheduleFlight schedule) {
 	
